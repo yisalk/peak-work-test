@@ -1,101 +1,83 @@
-import Image from "next/image";
+import { swiffyslider } from 'swiffy-slider';
+import "swiffy-slider/css";
+
+import Banner from "@/components/Banner";
+import FeatureProducts from "@/components/FeatureProducts";
+import HealthCare from "@/components/HealthCare";
+import ProductSlider from "@/components/ProductSlider";
+import FrequentQuestions from '@/components/FrequentQuestions';
+
+import body from "../../public/body.png";
+import injection from "../../public/injection.png";
+import insuleen from "../../public/insuleen.png";
+// import insuleen from "../../public/insuleen.png";
+import couple from "../../public/couple.png";
+import hardmint from "../../public/hardmint.png";
+import sexrx from "../../public/sexrx.png";
+import hairtreatment from "../../public/hairtreatment.png";
+import hairserum from "../../public/hairserum.png";
+import hairvtmn from "../../public/hairvtmn.png";
+import mentalhealth from "../../public/mentalhealth.png";
+import anxiety from "../../public/anxiety.png";
+import stress from "../../public/stress.png";
+import man from "../../public/man.png";
+import skincare from "../../public/skincare.png";
+import cbd from "../../public/cbd.png";
 
 export default function Home() {
+  const products = [
+    {
+      heading: "Weight",
+      products: [
+        { name: "Weight loss with a plan", image: body },
+        { name: "Ashwagandha", image: injection },
+        { name: "Dynamite", image: insuleen }
+      ]
+    },
+    {
+      heading: "Sex",
+      products: [
+        { name: "Erectile Dysfunction", image: couple },
+        { name: "Hard Mints", image: hardmint },
+        { name: "Sex Rx + Climax Control", image: sexrx }
+      ]
+    },
+    {
+      heading: "Hair",
+      products: [
+        { name: "Hair Treatment Formulated for you", image: hairtreatment },
+        { name: "Hair Serum", image: hairserum },
+        { name: "Hair Vitamins + Minoxidil", image: hairvtmn }
+      ]
+    },
+    {
+      heading: "Mental Health",
+      products: [
+        { name: "Better mental health", image: mentalhealth },
+        { name: "Anxiety", image: anxiety },
+        { name: "Stress & Burnout", image: stress }
+      ]
+    },
+    {
+      heading: "Skin",
+      products: [
+        { name: "Men's skin care that beats", image: man },
+        { name: "High Tide Cleanser", image: skincare },
+        { name: "Everyday Moisturizer", image: cbd }
+      ]
+    }
+  ];
+  
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    <section className="p-8">
+      <Banner />
+      <HealthCare />
+      <FeatureProducts />
+      <div class="container">
+        { products && products.map(product => <ProductSlider productData={product} />) }
+      </div>
+      <FrequentQuestions />
+    
+    </section>
   );
 }
